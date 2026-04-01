@@ -1,12 +1,19 @@
-AI NLP to SQL Backend
+# AI NLP to SQL Backend
 
-A FastAPI backend that converts natural language questions into SQL queries and executes them on a SQLite database. This project allows non-technical users to ask questions like:
-"How many students enrolled in Python courses in 2024?"
+A **FastAPI backend** that converts natural language questions into SQL queries and executes them on a SQLite database.  
+This project allows non-technical users to ask questions like:  
+*"How many students enrolled in Python courses in 2024?"*
 
-Example:
-User Question → "Show all students"
-Generated SQL → SELECT * FROM students LIMIT 5
+---
 
+## Example
+
+**User Question:**  
+Show all students
+
+**Generated SQL:**  
+```sql
+SELECT * FROM students LIMIT 5
 Features
 Convert natural language to SQL queries
 Execute SQL queries on database
@@ -22,6 +29,7 @@ Pytest
 Uvicorn
 Docker
 Kubernetes (optional)
+
 Project Structure
 ai-nlp-sql-backend/
 │
@@ -44,6 +52,7 @@ ai-nlp-sql-backend/
 ├── nlp2sql_service.yaml
 └── README.md
 Installation
+
 Clone the repository:
 git clone https://github.com/Khushisrivastava02/ai-nlp-sql-backend.git
 cd ai-nlp-sql-backend
@@ -61,12 +70,19 @@ uvicorn app.main:app --reload
 Server: http://127.0.0.1:8000
 API Docs: http://127.0.0.1:8000/docs
 Docker Setup
+
 Build the Docker image:
+
 docker build -t nlp2sql_app:latest .
+
 Run the container:
+
 docker run -d -p 8000:8000 --name nlp2sql_container nlp2sql_app:latest
+
 Access API: http://localhost:8000/docs
-Stop container:
+
+Stop and remove container:
+
 docker stop nlp2sql_container
 docker rm nlp2sql_container
 Optional Kubernetes Deployment
@@ -77,9 +93,10 @@ kubectl apply -f nlp2sql_pod.yaml
 kubectl apply -f nlp2sql_service.yaml
 kubectl get pods
 kubectl get svc
-Access API via browser: http://localhost:30080/docs
-API Example
 
+Access API via browser: http://localhost:30080/docs
+
+API Example
 POST /query
 
 Request Body:
@@ -95,10 +112,10 @@ Response:
   "result": [...],
   "execution_time": 0.01
 }
-
 GET /stats
 
-Returns total queries, most common keywords, slowest query
+Returns total queries, most common keywords, and slowest query.
+
 Testing
 
 Run tests using:
@@ -106,17 +123,25 @@ Run tests using:
 pytest
 Screenshots
 API Running
-
 Query Output
-
 GitHub Instructions
 
 To push updates:
 
 git add .
-git commit -m "Update README and add Docker setup"
+git commit -m "Update README with final polished version"
 git push
 Author
 
 Khushi Srivastava
 B.Tech CSE
+
+
+---
+
+💡 **Tip:** Save this as `README.md` in your project folder and then run:
+
+```powershell
+git add README.md
+git commit -m "Add final updated README"
+git push
